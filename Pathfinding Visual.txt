@@ -1,0 +1,23 @@
+## Pathfinding Visualization (Прокладання маршруту між об'єктами)
+
+#Create matrix (Створення матриці для сітки)
+matrix = [
+    [1, 1, 1, 1, 1, 1],
+    [1, 0, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1]]
+#Create grid (Створення сітки)
+grid = Grid(matrix=matrix)
+
+#Create a start and finish (Створення точок початку і кінця)
+start = grid.node(0, 0)
+finish = grid.node(5, 2)
+
+#Create finder (Створення пошуку маршруту)
+finder = asf(diagonal_movement=DM.always)
+
+#Use finder to find the path (використання файндеру для пошуку шляхів або маршруту)
+path,runs = finder.find_path(start, finish, grid)
+
+#Print results(Виведення результату)
+print(path)
+print(runs)
